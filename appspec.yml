@@ -2,19 +2,19 @@ version: 0.0
 os: linux
 
 files:
-#   - source: /test.jsp
-#     destination: /home/ec2-user/tomcat/webapps/ROOT
-    - source: /index.html
-      destination: /var/www/html
+  - source: /test.jsp
+    destination: /home/ec2-user/tomcat/webapps/ROOT
+#   - source: /index.html
+#     destination: /var/www/html
 
 file_exists_behavior: OVERWRITE
 
 hooks:
   AfterInstall:
     - location: server_start.sh
-      timeout: 300
+      timeout: 10
       runas: root
   ApplicationStop:
     - location: server_stop.sh
-      timeout: 300
-      runas: root 
+      timeout: 10
+      runas: root
